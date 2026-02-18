@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SaaS Pricing</title>
+  <link rel="stylesheet" href="styles.css" />
+
+
+</head>
+
+<body>
+
+  <section class="pricing">
+    <div class="grid-background"></div>
+
+    <div class="container">
+      <h2 class="section-title dm-serif-display-regular">Simple, Good Pricing</h2>
+      <p class="section-subtitle">Choose the plan that fits you & your workflow.</p>
+
+      <div class="pricing-grid">
+        <!-- Basic Plan -->
+        <div class="card">
+          <h3 class="plan-name">Basic</h3>
+          <p class="plan-summary">Perfect for individuals just getting started.</p>
+          <ul class="features">
+            <li>5 Projects</li>
+            <li>10 GB Storage</li>
+            <li>Email Support</li>
+            <li>Community Access</li>
+          </ul>
+          <p class="price">$9<span class="dm-serif-display-regular-italic">/ per month</span></p>
+          <button class="btn">Choose Plan</button>
+        </div>
+
+        <!-- Pro Plan (Most Popular) -->
+        <div class="card popular">
+          <div class="badge-glow">Most Popular</div>
+          <h3 class="plan-name">Pro</h3>
+          <p class="plan-summary">Ideal for freelancers and small teams.</p>
+          <ul class="features">
+            <li>Unlimited Projects</li>
+            <li>100 GB Storage</li>
+            <li>Priority Support</li>
+            <li>Team Collaboration</li>
+          </ul>
+          <p class="price">$29<span class="dm-serif-display-regular-italic">/ per month</span></p>
+          <button class="btn primary">Choose Plan</button>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="card">
+          <h3 class="plan-name">Enterprise</h3>
+          <p class="plan-summary">Best for large organizations with advanced needs.</p>
+          <ul class="features">
+            <li>Unlimited Storage</li>
+            <li>Dedicated Manager</li>
+            <li>24/7 Support</li>
+            <li>Custom Integrations</li>
+          </ul>
+          <p class="price">$99<span class="dm-serif-display-regular-italic">/ per month</span></p>
+          <button class="btn">Choose Plan</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>
+
+
+<script>
+  const features = document.getElementsByClassName("features");
+
+  const tickIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"16px\" viewBox=\"0 -960 960 960\" width=\"24px\" fill=\"#e3e3e3\"><path d=\"M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z\"/></svg>"
+  const tickIconDefault = "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"16px\" viewBox=\"0 -960 960 960\" width=\"24px\" fill=\"#2b2b2b\"><path d=\"M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z\"/></svg>"
+
+
+  for (let i = 0; i < features.length; i++) {
+    const featureList = features[i].getElementsByTagName("li");
+    for (let j = 0; j < featureList.length; j++) {
+      if (i !== 1) {
+        featureList[j].innerHTML = tickIconDefault + featureList[j].innerHTML;
+      } else {
+        featureList[j].innerHTML = tickIcon + featureList[j].innerHTML;
+      }
+    }
+  }
+</script>
